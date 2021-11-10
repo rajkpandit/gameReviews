@@ -1,0 +1,36 @@
+[[extend 'layout.html']]
+
+<div class="cotainer">
+    <h1 class="title">Rows Resulting </h1>
+
+   
+    <table class="table is-striped is-fullwidth">
+      <tr>
+        <th>Steam AppID</th>
+        <th> Name</th>
+        <th>Developer</th>
+        <th>Owners</th>
+        <th>Genre</th>
+      </tr>
+      [[for row in rows:]]
+      <tr>
+        <td>[[=row['steam_appid'] ]]</td>
+        <td>[[=row['name'] ]]</td>
+        <td>[[=row['developer'] ]]</td>
+        <td>[[= row['owners'] ]]</td>
+        <td>[[= row['genre'] ]]</td>
+
+      </tr>
+      [[pass]]
+    </table>
+  
+</div>
+
+
+<div class="section">
+
+  <h1 class="title">Read an item from Games Table</h1>
+
+  [[=form]]
+
+</div>

@@ -1,0 +1,69 @@
+timestamp: 2021-11-08T13:55:03.291165
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512) UNIQUE,
+    "email" CHAR(512) UNIQUE,
+    "password" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "sso_id" CHAR(512),
+    "action_token" CHAR(512),
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
+);
+success!
+timestamp: 2021-11-08T13:55:03.293897
+CREATE TABLE "auth_user_tag_groups"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "path" CHAR(512),
+    "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+success!
+timestamp: 2021-11-08T13:57:36.015442
+CREATE TABLE "game"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "steam_appid" CHAR(512),
+    "name" CHAR(512),
+    "developer" CHAR(512),
+    "owners" CHAR(512),
+    "genre" CHAR(512)
+);
+success!
+timestamp: 2021-11-08T13:57:36.017444
+CREATE TABLE "gamedata"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "steam_appid" CHAR(512),
+    "name" CHAR(512),
+    "developers" CHAR(512),
+    "metacritic" CHAR(512),
+    "reccomendations" CHAR(512)
+);
+success!
+timestamp: 2021-11-08T13:57:36.019081
+CREATE TABLE "appdata"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "steam_appid" CHAR(512),
+    "timestamp_created" CHAR(512),
+    "timestamp_updated" CHAR(512),
+    "voted_up" CHAR(512),
+    "votes_up" CHAR(512),
+    "votes_funny" CHAR(512),
+    "weighted_vote_score" CHAR(512),
+    "comment_count" CHAR(512)
+);
+success!
+timestamp: 2021-11-08T13:57:36.020727
+CREATE TABLE "reviewdata"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "steam_appid" CHAR(512),
+    "review_score" CHAR(512),
+    "review_score_desc" CHAR(512),
+    "total_positive" CHAR(512),
+    "total_negative" CHAR(512),
+    "total_reviews" CHAR(512)
+);
+success!
+success!
+success!
+success!
